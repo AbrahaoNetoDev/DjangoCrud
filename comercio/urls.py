@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import hello
 from .views import article
+from .views import fname
 from clientes import urls as clients_urls
 
 urlpatterns = [
     path('hello', hello),
     path('article/<int:year>/', article),
+    path('pessoa/<str:nome>/', fname),
     path('person/', include(clients_urls)),
     path('admin/', admin.site.urls)
 ]
